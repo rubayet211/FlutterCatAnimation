@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/cat.dart';
+import 'package:flutter/rendering.dart';
 
 class Home extends StatefulWidget {
   HomeState createState() => HomeState();
@@ -17,7 +18,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
       duration: Duration(seconds: 2),
       vsync: this,
     );
-    catAnimation = Tween(begin: 0.0, end: 100.0).animate(
+    catAnimation = Tween(begin: -50.0, end: 100.0).animate(
       CurvedAnimation(parent: catController!, curve: Curves.easeIn),
     );
   }
@@ -38,6 +39,7 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
       body: GestureDetector(
         child: Center(
           child: Stack(
+            clipBehavior: Clip.none,
             children: [
               buildBox(),
               buildCatAnimation(),
