@@ -33,7 +33,6 @@ class HomeState extends State<Home> with TickerProviderStateMixin {
         boxController.forward();
       }
     });
-    boxController.forward();
 
     catController = AnimationController(
       duration: Duration(milliseconds: 200),
